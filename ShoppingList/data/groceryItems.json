@@ -1,0 +1,176 @@
+[
+  {
+    "id": 1,
+    "name": "Bhan-Pho",
+    "price": 2.45,
+    "image": "bahn_pho"
+  },
+
+  {
+    "id": 2,
+    "name": "Black Vinegar",
+    "price": 2.99,
+    "image": "black_vinegar"
+  },
+
+  {
+    "id": 3,
+    "name": "Carrots",
+    "price": 0.75,
+    "image": "carrots"
+  },
+
+  {
+    "id": 4,
+    "name": "Fish Sauce",
+    "price": 16.49,
+    "image": "fish_sauce"
+  },
+
+  {
+    "id": 5,
+    "name": "Oyster Sauce",
+    "price": 6.99,
+    "image": "oyster_sauce"
+  },
+
+  {
+    "id": 6,
+    "name": "Shao Xing Wine",
+    "price": 2.69,
+    "image": "shao_xing_wine"
+  },
+
+  {
+    "id": 7,
+    "name": "Mirin",
+    "price": 17.99,
+    "image": "mirin"
+  },
+
+  {
+    "id": 8,
+    "name": "Tamari",
+    "price": 4.99,
+    "image": "tamari"
+  },
+
+  {
+    "id": 9,
+    "name": "Bok Choy",
+    "price": 3.49,
+    "image": "bok_choy"
+  },
+
+  {
+    "id": 10,
+    "name": "Gai Lan",
+    "price": 2.59,
+    "image": "gai_lan"
+  },
+
+  {
+    "id": 11,
+    "name": "Yu Chow Sum",
+    "price": 2.49,
+    "image": "yu_chow_sum"
+  },
+
+  {
+    "id": 12,
+    "name": "Thai Basil",
+    "price": 1.99,
+    "image": "thai_basil"
+  },
+
+  {
+    "id": 13,
+    "name": "Cilantro",
+    "price": 1.99,
+    "image": "cilantro"
+  },
+
+  {
+    "id": 14,
+    "name": "Green Onions",
+    "price": 0.99,
+    "image": "green_onion"
+  },
+
+  {
+    "id": 15,
+    "name": "Sesame Oil",
+    "price": 15.99,
+    "image": "sesame_oil"
+  },
+
+  {
+    "id": 16,
+    "name": "Thai Chili",
+    "price": 2.49,
+    "image": "thai_chili"
+  },
+
+  {
+    "id": 17,
+    "name": "Ginger",
+    "price": 1.99,
+    "image": "ginger"
+  },
+
+  {
+    "id": 18,
+    "name": "Garlic",
+    "price": 0.99,
+    "image": "garlic"
+  },
+
+  {
+    "id": 19,
+    "name": "Shallots",
+    "price": 1.99,
+    "image": "shallot"
+  },
+
+  {
+    "id": 20,
+    "name": "Peppers",
+    "price": 1.99,
+    "image": "peppers"
+  },
+
+  {
+    "id": 21,
+    "name": "Daikon",
+    "price": 1.99,
+    "image": "daikon"
+  },
+
+  {
+    "id": 22,
+    "name": "Red Onion",
+    "price": 1.49,
+    "image": "red_onion"
+  },
+
+  {
+    "id": 23,
+    "name": "Chives",
+    "price": 2.49,
+    "image": "chive"
+  },
+
+  {
+    "id": 24,
+    "name": "Sesame Seeds",
+    "price": 3.49,
+    "image": "sesame_seed"
+  },
+
+  {
+    "id": 25,
+    "name": "Scallops",
+    "price": 19.99,
+    "image": "scallops"
+  }
+]
