@@ -1,20 +1,14 @@
 import { images } from "../../assets/images";
 import { styles } from "./grocery-item.style";
 import { GroceryItemCardProps } from "./grocery-item-types";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 
-/**
- * @format
- * @file GroceryItemCard.tsx
- * @description This component renders a card for a grocery item.
- * It displays the item's image, name, and price.
- * The component is styled using a separate stylesheet.
- */
-export const GroceryItemCard = ({
-  item,
-}: GroceryItemCardProps): JSX.Element => {
+export function GroceryItemCard(props: Readonly<GroceryItemCardProps>) {
+  const { item, onPress, onAddToCart } = props;
+  const CardWrapper = onPress ? TouchableOpacity : View;
+
   return (
-    <View style={styles.card}>
+    <CardWrapper style={styles.card} onPress={onPress}>
       <Image
         source={images[item.image]}
         style={styles.image}
@@ -23,7 +17,16 @@ export const GroceryItemCard = ({
       <View style={styles.textContainer}>
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.price}>${item.price}</Text>
+
+        {onAddToCart && (
+          <TouchableOpacity
+            style={styles.addButton}
+            onPress={() => onAddToCart(item)}
+          >
+            <Text style={styles.addButtonText}>Add to Cart</Text>
+          </TouchableOpacity>
+        )}
       </View>
-    </View>
+    </CardWrapper>
   );
-};
+}

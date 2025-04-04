@@ -30,4 +30,14 @@ export const styles = StyleSheet.create({
     color: "#333",
     textAlign: "center",
   },
+  addButton: {
+    marginTop: 10,
+    backgroundColor: "#28a745",
+    padding: 10,
+    borderRadius: 5,
+  },
+  addButtonText: {
+    color: "#fff",
+    fontWeight: "600",
+  },
 });
