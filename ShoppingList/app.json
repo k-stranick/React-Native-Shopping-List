@@ -29,6 +29,13 @@
       "eas": {
         "projectId": "2c201ef4-fae2-4203-8ada-660519a4eec0"
       }
+    },
+    "owner": "k_stran",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/2c201ef4-fae2-4203-8ada-660519a4eec0"
     }
   }
 }

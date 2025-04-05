@@ -3,23 +3,29 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
+        backgroundColor: "#f5f5f5",
+        paddingTop: 48,
+        paddingHorizontal: 16,
     },
     title: {
-        fontSize: 24,
-        fontWeight: "bold",
-        marginBottom: 16,
+        fontSize: 22,
+        fontWeight: "700",
+        color: "#4CAF50",
+        marginBottom: 20,
+        textAlign: "center",
+    },
+    cartTitle: {
+        fontSize: 16,
+        fontWeight: "600",
+        color: "#333",
+        marginTop: 20,
+        textAlign: "center",
     },
     listContainer: {
-        flexGrow: 1,
+        paddingBottom: 24,
+        justifyContent: "space-between",
     },
     separator: {
         height: 16,
     },
-    cartTitle: {
-        fontSize: 20,
-        fontWeight: "bold",
-        marginTop: 16,
-    },
 });
-

@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, useWindowDimensions } from "react-native";
 import { GroceryItemCard } from "../components/ItemCard/ItemCard";
-import { GroceryItem } from "../components/ItemCard/ItemCard.types";
+import { Item } from "../types/interfaces/grocery/GroceryItem.types";
 import { styles } from "./HomeScreen.style";
-
 import shoppingListData from "../data/grocery-items.json";
 
 export function HomeScreen() {
-  const [cart, setCart] = useState<GroceryItem[]>([]);
+  const [cart, setCart] = useState<Item[]>([]);
 
-  const addToCart = (item: GroceryItem) => {
+  const addToCart = (item: Item) => {
     setCart((prevCart) => [...prevCart, item]);
   };
+
+  const { width } = useWindowDimensions();
+  const numColumns = Math.floor(width / 200); // Adjust the number of columns based on screen width
 
   return (
     <View style={styles.container}>
@@ -20,12 +22,12 @@ export function HomeScreen() {
       <FlatList
         data={shoppingListData}
         keyExtractor={(item) => item.id.toString()}
+        numColumns={numColumns}
         renderItem={({ item }) => (
-          //   <GroceryItemCard item={item} onAddToCart={addToCart} />
-          <GroceryItemCard item={item} onCardPress={() => addToCart(item)} />
+          //<GroceryItemCard item={item} handleButton={addToCart} /> //Generates Add To Cart Button
+          <GroceryItemCard item={item} handlePress={() => addToCart(item)} />
         )}
         contentContainerStyle={styles.listContainer}
-        numColumns={2}
         // columnWrapperStyle={styles.columnWrapper}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
       />
