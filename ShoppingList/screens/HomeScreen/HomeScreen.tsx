@@ -1,20 +1,20 @@
 import shoppingListData from "../../data/grocery-items.json";
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, FlatList } from "react-native";
 import { StyleSeparator } from "../../components/Separator";
 import { ItemCard } from "../../components/ItemCard/ItemCard";
 import { Item } from "../../types/interfaces/products/Product.types";
 import { styles } from "./HomeScreen.style";
 import { useResponsiveColumns } from "../../hooks/useResponsiveColumns";
-// import { useOrientation } from "../../hooks/orientationHook";
-// import { Orientation } from "../../types/enums/Orientation.enum";
+import { useAppSelector, useAppDispatch } from "../../hooks/reduxHooks";
+import { addToCart as addToCartAction } from "../../redux/slices/cartSlice";
 
-export function HomeScreen() {
-  const [cart, setCart] = useState<Item[]>([]);
-
+export default function HomeScreen() {
+  const dispatch = useAppDispatch();
+  const cartItems = useAppSelector((state) => state.cart.cartItems);
   const addToCart = (item: Item) => {
-    setCart((prevCart) => [...prevCart, item]);
-  }; //how does this know where the cart array is defined?
+    dispatch(addToCartAction(item));
+  };
 
   const numColumns = useResponsiveColumns({
     minWidth: 200,
@@ -39,7 +39,7 @@ export function HomeScreen() {
         ItemSeparatorComponent={StyleSeparator}
       />
 
-      <Text style={styles.cartTitle}>Shopping Cart: {cart.length}</Text>
+      <Text style={styles.cartTitle}>Shopping Cart: {cartItems.length}</Text>
     </View>
   );
 }

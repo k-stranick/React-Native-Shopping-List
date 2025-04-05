@@ -1,8 +1,18 @@
 import React from "react";
-import { HomeScreen } from "./screens/HomeScreen/HomeScreen";
+import HomeScreen from "./screens/HomeScreen/HomeScreen";
+import { Provider } from "react-redux";
+// import { PersistGate } from "redux-persist/integration/react";
+import { store } from "./redux/store";
 
 export default function App() {
-  return <HomeScreen />;
+  return (
+    <React.StrictMode>
+      <Provider store={store}>
+        {/* <PersistGate loading={<SplashScreen />} persistor={persistor}> */}
+        <HomeScreen />;{/* </PersistGate> */}
+      </Provider>
+    </React.StrictMode>
+  );
 }
 
 /**
