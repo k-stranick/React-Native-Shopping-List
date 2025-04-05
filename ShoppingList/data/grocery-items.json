@@ -172,5 +172,12 @@
     "name": "Scallops",
     "price": 19.99,
     "image": "scallops"
+  },
+
+  {
+    "id": 26,
+    "name": "Jalapeno",
+    "price": 2.49,
+    "image": "jalapeno"
   }
 ]
