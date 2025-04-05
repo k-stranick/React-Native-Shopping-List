@@ -65,6 +65,8 @@ export const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 10,
     backgroundColor: "#fff",
+    borderWidth: 2,
+    borderColor: '#ccc',
 
     // Basic shadow/elevation for Android + iOS
     shadowColor: "#000",

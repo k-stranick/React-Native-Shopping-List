@@ -1,11 +1,11 @@
 import { images } from "../../assets/images";
 import { styles } from "./ItemCard.style";
-import { GroceryItemCardProps } from "../../types/interfaces/grocery/GroceryItem.types";
+import { ItemCardProps } from "../../types/interfaces/products/Product.types";
 import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
 
 //TODO:RENAME addToCart and onPress to be more descriptive for card press and add to cart or button display and press and add to cart
 
-export function ItemCard(props: Readonly<GroceryItemCardProps>) {
+export function ItemCard(props: Readonly<ItemCardProps>) {
   const { item, handlePress, handleButton } = props;
 
   const handleCardPress = () => {
@@ -25,7 +25,7 @@ export function ItemCard(props: Readonly<GroceryItemCardProps>) {
 }
 
 function renderCardContent(
-  item: GroceryItemCardProps["item"],
+  item: ItemCardProps["item"],
   handleAddToCart?: (e: any) => void
 ) {
   return (

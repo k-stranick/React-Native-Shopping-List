@@ -1,25 +1,26 @@
-import React, { useState } from "react";
-import { View, Text, FlatList, useWindowDimensions } from "react-native";
-import { ItemCard } from "../../components/ItemCard/ItemCard";
-import { Item } from "../../types/interfaces/grocery/GroceryItem.types";
-import { styles } from "./HomeScreen.style";
 import shoppingListData from "../../data/grocery-items.json";
-import { useOrientation } from "../../hooks/orientationHook";
-import { Orientation } from "../../types/enums/Orientation.enum";
+import React, { useState } from "react";
+import { View, Text, FlatList } from "react-native";
+import { StyleSeparator } from "../../components/Separator";
+import { ItemCard } from "../../components/ItemCard/ItemCard";
+import { Item } from "../../types/interfaces/products/Product.types";
+import { styles } from "./HomeScreen.style";
+import { useResponsiveColumns } from "../../hooks/useResponsiveColumns";
+// import { useOrientation } from "../../hooks/orientationHook";
+// import { Orientation } from "../../types/enums/Orientation.enum";
 
 export function HomeScreen() {
   const [cart, setCart] = useState<Item[]>([]);
 
   const addToCart = (item: Item) => {
     setCart((prevCart) => [...prevCart, item]);
-  };
+  }; //how does this know where the cart array is defined?
 
-  const { width } = useWindowDimensions();
-  const rawColumns = Math.floor(width / 200);
-  const numColumns = Math.max(1, Math.min(rawColumns, 4)); // between 1 and 4
-
-  // const isTablet = width >= 768;
-  // const numColumns = isTablet ? 3 : 2;
+  const numColumns = useResponsiveColumns({
+    minWidth: 200,
+    minColumns: 1,
+    maxColumns: 4,
+  });
 
   return (
     <View style={styles.container}>
@@ -35,8 +36,7 @@ export function HomeScreen() {
           <ItemCard item={item} handlePress={() => addToCart(item)} />
         )}
         contentContainerStyle={styles.listContainer}
-        // columnWrapperStyle={styles.columnWrapper}
-        ItemSeparatorComponent={() => <View style={styles.separator} />}
+        ItemSeparatorComponent={StyleSeparator}
       />
 
       <Text style={styles.cartTitle}>Shopping Cart: {cart.length}</Text>

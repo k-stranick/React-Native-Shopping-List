@@ -41,6 +41,7 @@ export const styles = StyleSheet.create({
         paddingTop: 32,
         paddingHorizontal: 16,
     },
+
     title: {
         fontSize: 24,
         fontWeight: "700",
@@ -48,12 +49,11 @@ export const styles = StyleSheet.create({
         marginBottom: 16,
         color: "#333",
     },
+
     listContainer: {
         paddingBottom: 16, // extra space at bottom for scrolling
     },
-    separator: {
-        height: 16, // vertical gap between items
-    },
+
     cartTitle: {
         fontSize: 18,
         fontWeight: "600",

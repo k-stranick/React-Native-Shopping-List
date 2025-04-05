@@ -9,7 +9,7 @@ export interface Item {
 }
 
 //TODO:RENAME addToCart
-export interface GroceryItemCardProps {
+export interface ItemCardProps {
     readonly item: Item;
     readonly handlePress?: () => void; // Optional onPress function for when the card is pressed
     readonly handleButton?: (item: Item) => void; // Optional function to add item to cart with button (need to rename TODO:RENAME)
