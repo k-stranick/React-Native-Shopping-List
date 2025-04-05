@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, FlatList } from "react-native";
-import { GroceryItemCard } from "../GroceryItemCard/grocery-item-card";
-import { GroceryItem } from "../GroceryItemCard/grocery-item-types";
-import { styles } from "./home-screen.style";
+import { GroceryItemCard } from "../components/ItemCard/ItemCard";
+import { GroceryItem } from "../components/ItemCard/ItemCard.types";
+import { styles } from "./HomeScreen.style";
 
-import shoppingListData from "../../data/groceryItems.json";
+import shoppingListData from "../data/grocery-items.json";
 
 export function HomeScreen() {
   const [cart, setCart] = useState<GroceryItem[]>([]);

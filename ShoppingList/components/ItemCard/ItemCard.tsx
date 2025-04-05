@@ -1,6 +1,6 @@
 import { images } from "../../assets/images";
-import { styles } from "./grocery-item.style";
-import { GroceryItemCardProps } from "./grocery-item-types";
+import { styles } from "./ItemCard.style";
+import { GroceryItemCardProps } from "./ItemCard.types";
 import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
 
 // export function GroceryItemCard(props: Readonly<GroceryItemCardProps>) {
