@@ -19,10 +19,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.k_stran.ShoppingList"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2c201ef4-fae2-4203-8ada-660519a4eec0"
+      }
     }
   }
 }
