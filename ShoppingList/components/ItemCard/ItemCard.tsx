@@ -5,7 +5,7 @@ import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
 
 //TODO:RENAME addToCart and onPress to be more descriptive for card press and add to cart or button display and press and add to cart
 
-export function GroceryItemCard(props: Readonly<GroceryItemCardProps>) {
+export function ItemCard(props: Readonly<GroceryItemCardProps>) {
   const { item, handlePress, handleButton } = props;
 
   const handleCardPress = () => {
@@ -30,11 +30,13 @@ function renderCardContent(
 ) {
   return (
     <>
-      <Image
-        source={images[item.image]}
-        style={styles.image}
-        resizeMode="cover"
-      />
+      <View style={styles.imageContainer}>
+        <Image
+          source={images[item.image]}
+          style={styles.image}
+          resizeMode="cover"
+        />
+      </View>
       <View style={styles.textContainer}>
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.price}>${item.price}</Text>

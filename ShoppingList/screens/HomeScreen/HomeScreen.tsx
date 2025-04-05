@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, FlatList, useWindowDimensions } from "react-native";
-import { GroceryItemCard } from "../components/ItemCard/ItemCard";
-import { Item } from "../types/interfaces/grocery/GroceryItem.types";
+import { ItemCard } from "../../components/ItemCard/ItemCard";
+import { Item } from "../../types/interfaces/grocery/GroceryItem.types";
 import { styles } from "./HomeScreen.style";
-import shoppingListData from "../data/grocery-items.json";
+import shoppingListData from "../../data/grocery-items.json";
+import { useOrientation } from "../../hooks/orientationHook";
+import { Orientation } from "../../types/enums/Orientation.enum";
 
 export function HomeScreen() {
   const [cart, setCart] = useState<Item[]>([]);
@@ -13,7 +15,11 @@ export function HomeScreen() {
   };
 
   const { width } = useWindowDimensions();
-  const numColumns = Math.floor(width / 200); // Adjust the number of columns based on screen width
+  const rawColumns = Math.floor(width / 200);
+  const numColumns = Math.max(1, Math.min(rawColumns, 4)); // between 1 and 4
+
+  // const isTablet = width >= 768;
+  // const numColumns = isTablet ? 3 : 2;
 
   return (
     <View style={styles.container}>
@@ -22,10 +28,11 @@ export function HomeScreen() {
       <FlatList
         data={shoppingListData}
         keyExtractor={(item) => item.id.toString()}
+        key={numColumns}
         numColumns={numColumns}
         renderItem={({ item }) => (
           //<GroceryItemCard item={item} handleButton={addToCart} /> //Generates Add To Cart Button
-          <GroceryItemCard item={item} handlePress={() => addToCart(item)} />
+          <ItemCard item={item} handlePress={() => addToCart(item)} />
         )}
         contentContainerStyle={styles.listContainer}
         // columnWrapperStyle={styles.columnWrapper}
