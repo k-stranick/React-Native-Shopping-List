@@ -1,6 +1,6 @@
 import shoppingListData from "../../data/grocery-items.json";
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, Pressable } from "react-native";
 import { StyleSeparator } from "../../components/Separator";
 import { ItemCard } from "../../components/ItemCard/ItemCard";
 import { Item } from "../../types/interfaces/products/Product.types";
@@ -8,6 +8,10 @@ import { styles } from "./HomeScreen.style";
 import { useResponsiveColumns } from "../../hooks/useResponsiveColumns";
 import { useAppSelector, useAppDispatch } from "../../hooks/reduxHooks";
 import { addToCart as addToCartAction } from "../../redux/slices/cartSlice";
+
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParamList } from "../../types/interfaces/navigation.types"; // adjust path as needed
 
 export default function HomeScreen() {
   const dispatch = useAppDispatch();
@@ -21,11 +25,25 @@ export default function HomeScreen() {
     minColumns: 1,
     maxColumns: 4,
   });
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Drunken Noodle Shopping List</Text>
-
+      <Pressable
+        onPress={() => navigation.navigate("Cart")}
+        style={{
+          backgroundColor: "#f4511e",
+          paddingVertical: 10,
+          paddingHorizontal: 20,
+          borderRadius: 5,
+          alignSelf: "flex-start",
+          marginBottom: 10,
+        }}
+      >
+        <Text style={{ color: "white", fontWeight: "bold" }}>Go to Cart</Text>
+      </Pressable>
       <FlatList
         data={shoppingListData}
         keyExtractor={(item) => item.id.toString()}

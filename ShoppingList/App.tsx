@@ -1,6 +1,7 @@
 import React from "react";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import { Provider } from "react-redux";
+import Header from "./components/header/Header";
 // import { PersistGate } from "redux-persist/integration/react";
 import { store } from "./redux/store";
 
@@ -9,7 +10,7 @@ export default function App() {
     <React.StrictMode>
       <Provider store={store}>
         {/* <PersistGate loading={<SplashScreen />} persistor={persistor}> */}
-        <HomeScreen />;{/* </PersistGate> */}
+        <Header />
       </Provider>
     </React.StrictMode>
   );
